@@ -1,0 +1,17 @@
+{
+  "name": "devtinder",
+  "version": "1.0.0",
+  "description": "tinder for developers",
+  "main": "index.js",
+  "scripts": {
+    
+    "dev":"nodemon src/app.js",
+    "start":"node src/app.js"
+  },
+  "author": "Srijan Shukla",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  }
+}
