@@ -38,6 +38,7 @@ const userSchema = new mongoose.Schema({
     },
     skills:{
         type:[String],
+        maxlength:[10,"A user can have at most 10 skills"]
     },
     about:{
         type:String,
