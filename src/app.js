@@ -2,6 +2,7 @@ const express = require("express")
 const User = require("./models/user")
 const connectDB=require("./config/db")
 const app=express()
+const {validateSignUpData} = require("./utils/validation")
 
 app.use(express.json())
 
@@ -9,11 +10,12 @@ app.post('/signup',async (req,res)=>{
 
     const user = new User(req.body)
     try{
+        validateSignUpData(req)
         await user.save()
         res.send("user added successfully")
         }
     catch(err){
-        res.status(400).send("error saving the user: "+ err.message)
+        res.status(400).send("Error: "+ err.message)
     }    
     
 })
